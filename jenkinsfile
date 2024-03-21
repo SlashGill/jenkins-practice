@@ -5,7 +5,8 @@ pipeline {
         stage('ithome 2022 pipeline') {
             // 行為宣告
             steps {
-                echo 'Hello Github 2~'
+                withCredentials([string(credentialsId: 'token_test_id', variable: 'TOKEN')]){
+                    echo 'Hello Github 3 : token : ${TOKEN}'
             }
         }
     }
